@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Bot Testing Official Server
+Reporter: SnowCoder ⠕#5223
+
+Guessed Service: Discord
+TOKEN: ODQyMTgzMjIwNzk0NDkwOTEw.YJxmPg.Zu8mQ8qsfQ8yHr2apnvq4UzIUQ8
