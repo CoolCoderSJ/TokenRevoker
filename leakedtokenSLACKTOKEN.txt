@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Bot Testing Official Server
+Reporter: SnowCoder ⠕#5223
+
+Guessed Service: Slack Webhook URL
+TOKEN: everybody this is my slack webhook https://hooks.slack.com/services/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
