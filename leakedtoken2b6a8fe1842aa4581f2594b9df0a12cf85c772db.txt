@@ -6,4 +6,4 @@ Guild: Bot Testing Official Server
 Reporter: SnowCoder ⠕#5223
 
 Guessed Service: Github OAuth 2.0 Token
-TOKEN: 2b6a8fe1842aa4581f2594b9df0a12cf85c772db
+TOKEN: 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
