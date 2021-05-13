@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Bot Testing Official Server
+Reporter: SnowCoder ⠕#5223
+
+Guessed Service: Discord
+TOKEN: <Message id=842195231344164924 channel=<TextChannel id=783355665296130100 name='testing' position=7 nsfw=False news=False category_id=783354720042745877> type=<MessageType.default: 0> author=<Member id=744921397582888991 name='SnowCoder ⠕' discriminator='5223' bot=False nick=None guild=<Guild id=783354719334301708 name='Bot Testing Official Server' shard_id=None chunked=False member_count=16>> flags=<MessageFlags value=0>>
