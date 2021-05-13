@@ -1,9 +1,0 @@
-Hey there!
-
-We've created this file because a token was reported on Discord, and was asked to be revoked. 
-
-Guild: Bot Testing Official Server
-Reporter: SnowCoder ⠕#5223
-
-Guessed Service: Github OAuth 2.0 Token
-TOKEN: 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
