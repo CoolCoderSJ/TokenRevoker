@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Bot Testing Official Server
+Reporter: SnowCoder ⠕#5223
+
+Guessed Service: Slack API Key
+TOKEN: slack token xapp-1-A021UAHB403-2069970636708-ce1b57a5af5e70c7bb62ad4146efb64185ff84286a1d0fad32688f9e345e82b4
