@@ -73,23 +73,18 @@ async def on_message(message):
 	# print(message.attachments)
 	if message.attachments != []:
 		ocr = os.environ['OCR_KEY']
-		headers = {
-		'content-type': "application/json",
-		'x-rapidapi-key': ocr,
-		'x-rapidapi-host': "microsoft-computer-vision3.p.rapidapi.com"
-		}
 		for attachment in message.attachments:
-			response = requests.post("https://microsoft-computer-vision3.p.rapidapi.com/analyze", data={"url": attachment.url}, headers=headers)
+			response = requests.get(f"https://api.ocr.space/parse/imageUrl?apikey={ocr}&url={attachment.url}")
 			txt = response.text
 			print(txt)
 			service = Service(txt)
+			print(service)
 			if service != "Unknown":
 				if service == "IPv4" or service == "IPv6":
 					try:
-						await message.delete()
-						await message.reply(f"Uh oh! We detected an {service} in your message, but no worries! We've deleted your message to keep you safe.")
+						await message.reply(f"Uh oh! We detected an {service} in your message! Stay safe!")
 					except:
-						await message.reply(f"Uh oh! We detected an {service} in your message, but were unable to delete your message because of insufficient permissions. Please delete your message as soon as possible to remove your IP address!")
+						pass
 				else:
 					token = txt.split()
 					tok = ""
