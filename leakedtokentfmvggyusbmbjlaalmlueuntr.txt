@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Replit
+Reporter: Nayoar#1242
+
+Guessed Service: Discord
+TOKEN: NTI1NTk4ODA4NzE3OTE4MjE4.XBysCQ.Z2Bv5ZZcbf37BFJgYwv5QTFPfX4
