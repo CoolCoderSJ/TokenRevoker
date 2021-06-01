@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Replit
+Reporter: Nayoar#1242
+
+Guessed Service: Discord
+TOKEN: {"ParsedResults":[{"TextOverlay":{"Lines":[],"HasOverlay":false,"Message":"Text overlay is not provided as it is not requested"},"TextOrientation":"0","FileParseExitCode":1,"ParsedText":"Today 21:42\r\nSTOP\r\nHOLD UP!\r\nThis message may contain a Discord authentication\r\ntoken, which can grant an attacker access to your\r\naccount. Are you sure you want to send it?\r\nEdit Message\r\nESCt\r\nSend Now\r\n' TO SEND A TOKEN\r\nO NT11NTk40DA4NzE30TE4MiE4.XBysCQ.Z2Bv5ZZcbf37BFJgYwv5QTFPfX4\r\n","ErrorMessage":"","ErrorDetails":""}],"OCRExitCode":1,"IsErroredOnProcessing":false,"ProcessingTimeInMilliseconds":"1609","SearchablePDFURL":"Searchable PDF not generated as it was not requested."}
