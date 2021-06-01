@@ -33,6 +33,7 @@ client = commands.Bot(command_prefix = '+')
 
 @client.event
 async def on_ready():
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="+services  | SnowCoder ⠕#5223"))
     print(f"Logged in")
 
 @client.command()
@@ -48,11 +49,12 @@ async def services(ctx):
 
 @client.event
 async def on_message(message):
+	channel = await message.author.create_dm()
 	if message.content != "":
 		service = Service(message.content)
 		if service != "Unknown":
 			if service == "IPv4" or service == "IPv6":
-				await message.channel.send(f"Uh oh! We detected an {service} in your message! Make sure you stay safe!")
+				await channel.send(f"Uh oh! We detected an {service} in your message! Make sure you stay safe!\n\nMessage Link: {message.jump_url}")
 			else:
 				token = message.content.split()
 				tok = ""
@@ -69,7 +71,7 @@ async def on_message(message):
 					repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message.content}", branch="leakedtokens")
 				except:
 					repo.update_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message.content}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", branch="leakedtokens")
-				await message.channel.send(f"Hey there!\n\nYou've just leaked a token, but no worries, its been revoked! \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\n{text}")
+				await channel.send(f"Hey there!\n\nYou've just leaked a token, but no worries, its been revoked! \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\n{text}\n\nMessage Link: {message.jump_url}")
 	# print(message.attachments)
 	if message.attachments != []:
 		ocr = os.environ['OCR_KEY']
@@ -82,7 +84,7 @@ async def on_message(message):
 			if service != "Unknown":
 				if service == "IPv4" or service == "IPv6":
 					try:
-						await message.reply(f"Uh oh! We detected an {service} in your message! Stay safe!")
+						await channel.send(f"Uh oh! We detected an {service} in your message! Stay safe!\n\nMessage URL: {message.jump_url}")
 					except:
 						pass
 				else:
@@ -94,7 +96,7 @@ async def on_message(message):
 						repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {txt}", branch="leakedtokens")
 					except:
 						repo.update_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {txt}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", branch="leakedtokens")
-					await message.channel.send(f"Hey there!\n\nYou've just leaked a token, but no worries, its been revoked! \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}")
+					await channel.send(f"Hey there!\n\nYou've just leaked a token, but no worries, its been revoked! \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\n\nMessage Link: {message.jump_url}")
 	await client.process_commands(message)
 
 
