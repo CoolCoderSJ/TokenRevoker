@@ -8,6 +8,7 @@ from discord.ext import commands, tasks
 from discord.ext.commands import has_permissions,  CheckFailure, check
 import re
 import requests, random
+from IPy import IP
 from github import Github
 g = Github(os.environ['GITHUB_TOKEN'])
 repo = g.get_repo("CoolCoderSJ/TokenRevoker")
@@ -20,7 +21,12 @@ def Service(token):
 	elif re.search(r"""https://hooks.slack.com/services/""", token):
 		return "Slack Webhook URL"
 	elif re.search(r"""(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)""", token):
-		return "IPv4"
+		result = re.search(r"""(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)""", token)
+		ip = result.group(0)
+		ip = IP(ip)
+		if ip.iptype() == 'PUBLIC':
+			return "IPv4"
+		return 'Unknown'
 	elif re.search(r"""([0-9a-f]){1,4}(:([0-9a-f]){1,4}){7}""", token):
 		return "IPv6"
 	else:
@@ -54,6 +60,7 @@ async def on_message(message):
 		service = Service(message.content)
 		if service != "Unknown":
 			if service == "IPv4" or service == "IPv6":
+				
 				await channel.send(f"Uh oh! We detected an {service} in your message! Make sure you stay safe!\n\nMessage Link: {message.jump_url}")
 			else:
 				token = message.content.split()
@@ -78,7 +85,6 @@ async def on_message(message):
 		for attachment in message.attachments:
 			response = requests.get(f"https://api.ocr.space/parse/imageUrl?apikey={ocr}&url={attachment.url}")
 			txt = response.text
-			print(txt)
 			service = Service(txt)
 			print(service)
 			if service != "Unknown":
