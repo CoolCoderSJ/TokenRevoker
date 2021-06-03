@@ -44,7 +44,7 @@ client = commands.Bot(command_prefix = '+')
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="+services  | SnowCoder ⠕#5223"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="+help  | SnowCoder ⠕#5223"))
     print(f"Logged in")
 
 @client.command()
@@ -60,6 +60,7 @@ async def services(ctx):
 
 @client.event
 async def on_message(message):
+	if message.chann
 	await client.process_commands(message)
 	if str(message.author.id) in db.data.keys():
 		return
@@ -135,17 +136,6 @@ async def rmwhitelist(ctx):
 async def ping(ctx):
 	await ctx.send('Pong! {0}'.format(round(client.latency, 1)))
 
-@client.command()
-async def revoke(ctx, token):
-	service = Service(token)
-	if service != "Unknown":
-		token = token.split()
-		tok = ""
-		for char in token[0:10]:
-			tok += char
-		repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {ctx.guild.name}\nReporter: {ctx.author.name}#{ctx.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {tok}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {ctx.guild.name}\nReporter: {ctx.author.name}#{ctx.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {tok}", branch="leakedtokens")
-		await ctx.send(f"Hey there!\n\You've just leaked a token, but no worries, its been revoked! \n\nGuild: {ctx.guild.name}\nReporter: {ctx.author.name}#{ctx.author.discriminator}\n\nGuessed Service: {service}")
-	
 
 keep_alive.keep_alive()
 client.run(os.getenv("TOKEN"))
