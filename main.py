@@ -60,8 +60,11 @@ async def services(ctx):
 
 @client.event
 async def on_message(message):
-	if message.chann
-	await client.process_commands(message)
+	if message.guild.id == 437048931827056642:
+		if message.channel.id == 439586718681792552:
+			await client.process_commands(message)
+	else:
+		await client.process_commands(message)
 	if str(message.author.id) in db.data.keys():
 		return
 	channel = await message.author.create_dm()
