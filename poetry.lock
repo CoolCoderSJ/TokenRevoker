@@ -120,6 +120,18 @@ voice = ["PyNaCl (>=1.3.0,<1.5)"]
 
 [[package]]
 category = "main"
+description = "Simple and easy-to-use python database"
+name = "easypydb"
+optional = false
+python-versions = "*"
+version = "0.4.4"
+
+[package.dependencies]
+requests = "*"
+s1db = "*"
+
+[[package]]
+category = "main"
 description = "A simple framework for building complex web applications."
 name = "flask"
 optional = false
@@ -259,6 +271,17 @@ socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
 
 [[package]]
 category = "main"
+description = "S1 API Library for Python"
+name = "s1db"
+optional = false
+python-versions = "*"
+version = "1.0.3"
+
+[package.dependencies]
+requests = "*"
+
+[[package]]
+category = "main"
 description = "Python 2 and 3 compatibility utilities"
 name = "six"
 optional = false
@@ -305,7 +328,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "5eea7d98271ebcf8a667a7d7a3de6d354edaf03713edfcdfe043f3e07c9120bf"
+content-hash = "08fd827ca1e53cdcc0a90640b3f201ba12a69198afaf49a1348d9a9ca216f850"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -430,6 +453,9 @@ discord = [
 "discord.py" = [
     {file = "discord.py-1.7.2-py3-none-any.whl", hash = "sha256:f179db299c949a8cf0a12c1b1b94d0da9a18e088857154d93ae5ab1d807ec61d"},
     {file = "discord.py-1.7.2.tar.gz", hash = "sha256:114e76cd27362fb919abf7f001a2dbdc77c9a67cff74ed6a89aecd6582ee298e"},
+]
+easypydb = [
+    {file = "easypydb-0.4.4.tar.gz", hash = "sha256:f9b550b88c30cb7329cee1f73b57069ad6f201a10a43e3641cb4ffa3cd4858b9"},
 ]
 flask = [
     {file = "Flask-2.0.0-py3-none-any.whl", hash = "sha256:1833a4b36ace08dfa1510d86f1bb6fc595d990ec1b838e03ac8dd80ac0705954"},
@@ -560,6 +586,10 @@ pynacl = [
 requests = [
     {file = "requests-2.15.1-py2.py3-none-any.whl", hash = "sha256:ff753b2196cd18b1bbeddc9dcd5c864056599f7a7d9a4fb5677e723efa2b7fb9"},
     {file = "requests-2.15.1.tar.gz", hash = "sha256:e5659b9315a0610505e050bb7190bf6fa2ccee1ac295f2b760ef9d8a03ebbb2e"},
+]
+s1db = [
+    {file = "s1db-1.0.3-py3-none-any.whl", hash = "sha256:eac85c5eba3a3ba2fa0409fef30b0615c16f7c11d9365640dc62b714e9514f92"},
+    {file = "s1db-1.0.3.tar.gz", hash = "sha256:f4a1bcb7135af13d4a6a7e8884b7dde03d2992a289120f423d7dcc6689b9e951"},
 ]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},

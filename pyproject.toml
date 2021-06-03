@@ -10,6 +10,7 @@ discord = "^1.0.1"
 flask = "^2.0.0"
 PyGithub = "^1.55"
 ipy = "^1.01"
+easypydb = "^0.4.4"
 
 [tool.poetry.dev-dependencies]
 

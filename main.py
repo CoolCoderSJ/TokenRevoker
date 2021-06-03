@@ -9,9 +9,14 @@ from discord.ext.commands import has_permissions,  CheckFailure, check
 import re
 import requests, random
 from IPy import IP
+from easypydb import DB
 from github import Github
 g = Github(os.environ['GITHUB_TOKEN'])
 repo = g.get_repo("CoolCoderSJ/TokenRevoker")
+
+db = DB("db", os.environ['DB_TOKEN'])
+db.autoload = True
+db.autosave = True
 
 def Service(token):
 	if re.search(r"""[M-Z][A-Za-z\d]{23}.[\w-]{6}.[\w-]{27}""", token):
@@ -27,7 +32,7 @@ def Service(token):
 		if ip.iptype() == 'PUBLIC':
 			return "IPv4"
 		return 'Unknown'
-	elif re.search(r"""([0-9a-f]){1,4}(:([0-9a-f]){1,4}){7}""", token):
+	elif re.search(r"""([0-9a-f]{4}:){7}([0-9a-f]{4})""", token):
 		return "IPv6"
 	else:
 		return "Unknown"
@@ -55,6 +60,9 @@ async def services(ctx):
 
 @client.event
 async def on_message(message):
+	await client.process_commands(message)
+	if str(message.author.id) in db.data.keys():
+		return
 	channel = await message.author.create_dm()
 	if message.content != "":
 		service = Service(message.content)
@@ -103,8 +111,25 @@ async def on_message(message):
 					except:
 						repo.update_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {txt}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", branch="leakedtokens")
 					await channel.send(f"Hey there!\n\nYou've just leaked a token, but no worries, its been revoked! \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\n\nMessage Link: {message.jump_url}")
-	await client.process_commands(message)
+	
 
+@client.command()
+async def whitelist(ctx):
+	id = str(ctx.author.id)
+	if id in db.data.keys():
+		await ctx.send("You are already whitelisted.")
+	else:
+		db[id] = "WHITELIST"
+		await ctx.send("You have been whitelisted. You will not be DM'd for any more alerts.")
+
+@client.command()
+async def rmwhitelist(ctx):
+	id = str(ctx.author.id)
+	if id in db.data.keys():
+		del db[id]
+		await ctx.send("You have been removed from the whitelist.")
+	else:
+		await ctx.send("You are not whitelisted.")
 
 @client.command()
 async def ping(ctx):
