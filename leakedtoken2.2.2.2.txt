@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Replit
+Reporter: programmer_user#1374
+
+Guessed Service: IPv4
+TOKEN: 2.2.2.2
