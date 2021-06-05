@@ -19,7 +19,7 @@ db.autoload = True
 db.autosave = True
 
 def Service(token):
-	if re.search(r"""[M-Z][A-Za-z\d]{23}.[\w-]{6}.[\w-]{27}""", token):
+	if re.search(r"""[M-Z][A-Za-z\d]{23}\.[\w-]{6}.[\w-]{27}""", token):
 		return "Discord"
 	elif re.search(r"""xapp-[0-9a-zA-Z]-[0-9A-Z]{11}-[0-9]{13}-[0-9a-zA-Z]{24}""", token):
 		return "Slack API Key"
