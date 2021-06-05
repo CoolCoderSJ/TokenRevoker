@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Replit
+Reporter: 19wintersp#1177
+
+Guessed Service: Discord
+TOKEN: https://color.firefox.com/?theme=XQAAAAI5AQAAAAAAAABBKYhm849SCia3ftKEGccwS-xMDPr4FHRS1IAYgPpJmMqoaMV1vHo2YUqSSJyfqfEElOKeef92SY4r9EMCcR8I_ZKVhq6BVzXIW0GaUY3LL9g5g3Ba4nZHCWRyh4HjjGML7eweYvYm0oE6IMDmNP2MuaR9vzFSWZisZTQyDX9032EdyMsqwa0BDWOCDMU4ujaW0M6tWvaRjlTQzGm2llutCkPees_rkvP0iD67-YuKxQeFeG4x0Do7pANN5_ipCP-mY9QA
