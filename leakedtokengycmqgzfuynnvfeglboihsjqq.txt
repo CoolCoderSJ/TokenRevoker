@@ -1,0 +1,10 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Replit
+Reporter: SamL2020#1767
+
+Guessed Service: Discord
+TOKEN: Free ~~Cookies~~ Tokens (Testing token scanner cus i'm bored)
+NzUxNDcwNTY3ODEwNTMxNDM5.X1JjgQ.bR-e16vqLm9eXBmTnYGP3eu-OX0
