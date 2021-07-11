@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Top.gg Verification Center
+Reporter: Nekomaki#0001
+
+Guessed Service: Discord
+TOKEN: ODMwNTA5MTU1NTI0NTQyNTE0.YHHt7A.gvpfP5mS33oNMZ6WXXioRVo_60g
