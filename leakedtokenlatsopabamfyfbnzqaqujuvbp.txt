@@ -1,0 +1,19 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Replit
+Reporter: Baltraz#4874
+
+Guessed Service: Discord
+TOKEN: (node:737) UnhandledPromiseRejectionWarning: FetchError: request to https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjYzNjE5MjQsImlhdCI6MTYyNjI1MDMyNCwiaXNzIjoiY29ubWFuIiwiZGF0YWJhc2VfaWQiOiIzY2I4YzJhMy1iZmQzLTRkYzMtOWMxYS0wMTMyYmI5ZWIwNDAifQ.KYORugvsbNMTYwwQG0JbpM1bRLOlD-GwpTGykuHxbHgDnuh9nhDXLrhsA2Wi9yR5nxY7cG7dy3UnFGj7pqjQzg/847451487775752202 failed, reason: connect ETIMEDOUT 35.224.251.249:443
+    at ClientRequest.<anonymous> (/home/runner/Sky-Bot-Beta/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:376:20)
+    at TLSSocket.socketErrorListener (_http_client.js:475:9)
+    at TLSSocket.emit (events.js:376:20)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+    at processTicksAndRejections (internal/process/task_queues.js:82:21)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:737) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:737) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
