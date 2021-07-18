@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Token Logging Server
+Reporter: ٴٴ#9255
+
+Guessed Service: Discord
+TOKEN: +token ODIyOTQ2MzcwODkzMjUwNTcw.YPM1ig.2faWssfftuTfgBTktMbEfJ88XbE
