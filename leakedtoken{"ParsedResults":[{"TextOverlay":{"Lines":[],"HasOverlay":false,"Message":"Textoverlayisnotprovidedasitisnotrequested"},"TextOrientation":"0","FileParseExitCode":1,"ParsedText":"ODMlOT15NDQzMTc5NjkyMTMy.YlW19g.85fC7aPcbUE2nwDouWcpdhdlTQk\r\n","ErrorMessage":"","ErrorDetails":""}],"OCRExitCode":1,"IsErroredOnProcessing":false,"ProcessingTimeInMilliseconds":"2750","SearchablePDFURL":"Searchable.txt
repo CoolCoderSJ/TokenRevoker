@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Replit
+Reporter: SamL2020#1767
+
+Guessed Service: Discord
+TOKEN: {"ParsedResults":[{"TextOverlay":{"Lines":[],"HasOverlay":false,"Message":"Text overlay is not provided as it is not requested"},"TextOrientation":"0","FileParseExitCode":1,"ParsedText":"ODMlOT15NDQzMTc5NjkyMTMy.YlW19g.85fC7aPcbUE2nwDouWcpdhdlTQk\r\n","ErrorMessage":"","ErrorDetails":""}],"OCRExitCode":1,"IsErroredOnProcessing":false,"ProcessingTimeInMilliseconds":"2750","SearchablePDFURL":"Searchable PDF not generated as it was not requested."}
