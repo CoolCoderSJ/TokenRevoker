@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Replit
+Reporter: Hithere#6537
+
+Guessed Service: Discord
+TOKEN: {"ParsedResults":[{"TextOverlay":{"Lines":[],"HasOverlay":false,"Message":"Text overlay is not provided as it is not requested"},"TextOrientation":"0","FileParseExitCode":1,"ParsedText":"AaaaaBBBBBqw (0)\r\nGuys\r\nHello Guys. My bot Token -\r\nODgwODYwNDYlNTA3NDg3NzcO.YSkbPA.KcGGMOhw9J059gK7Ck5PARQ69_4\r\nThis is a 24 hours challenge. Do what you want with it (if it...\r\nAsk Board • Today at 12:22 PM\r\nAaaaaBBBBBqw (0)\r\nGuys\r\nHello Guys. My bot Token -\r\nODgwODYwNDYlNTA3NDg3NzcO.YSkbPA.KcGGMOhw9J059gK7Ck5PARQ69_4\r\nThis is a 24 hours challenge. Do what you want with it (if it...\r\nTutorials Board • Today at 12:23 PM\r\nAaaaaBBBBBqw (0)\r\nGuys\r\nHello Guys. My bot Token -\r\nODgwODYwNDYlNTA3NDg3NzcO.YSkbPA.KcGGMOhw9J059gK7Ck5PARQ69_4\r\nThis is a 24 hours challenge. Do what you want with it (if it...\r\nTemplates Board • Today at 12:23 PM\r\n","ErrorMessage":"","ErrorDetails":""}],"OCRExitCode":1,"IsErroredOnProcessing":false,"ProcessingTimeInMilliseconds":"828","SearchablePDFURL":"Searchable PDF not generated as it was not requested."}
