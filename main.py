@@ -92,10 +92,7 @@ async def on_message(message):
 		for attachment in message.attachments:
 			r = requests.get(f"http://api.qrserver.com/v1/read-qr-code/?fileurl={attachment.url}")
 			if "discord.com\\/ra\\/" in r.text:
-				try:
-					await message.delete()
-				except:
-					pass
+				await message.delete()
 			response = requests.get(f"https://api.ocr.space/parse/imageUrl?apikey={ocr}&url={attachment.url}")
 			txt = response.text
 			service = Service(txt)
