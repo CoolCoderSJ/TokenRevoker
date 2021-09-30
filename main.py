@@ -87,15 +87,11 @@ async def on_message(message):
 				except:
 					repo.update_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message.content}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", branch="leakedtokens")
 				await channel.send(f"Hey there!\n\nYou've just leaked a token, but no worries, its been revoked! \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\n{text}\n\nMessage Link: {message.jump_url}")
-	# print(message, message.attachments)
 	if message.attachments != []:
 		ocr = os.environ['OCR_KEY']
 		for attachment in message.attachments:
-			print(attachment.url)
 			r = requests.get(f"http://api.qrserver.com/v1/read-qr-code/?fileurl={attachment.url}")
-			print(r.text)
 			if "discord.com\\/ra\\/" in r.text:
-				print("qr")
 				try:
 					await message.delete()
 				except:
@@ -103,7 +99,6 @@ async def on_message(message):
 			response = requests.get(f"https://api.ocr.space/parse/imageUrl?apikey={ocr}&url={attachment.url}")
 			txt = response.text
 			service = Service(txt)
-			print(service)
 			if service != "Unknown":
 				if service == "IPv4" or service == "IPv6":
 					try:
