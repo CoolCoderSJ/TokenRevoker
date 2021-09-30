@@ -44,7 +44,7 @@ client = commands.Bot(command_prefix = '+')
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="+help  | SnowCoder ⠕#5223"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="+help  | SnowCoder ⠕#0600"))
     print(f"Logged in")
 
 @client.command()
@@ -60,11 +60,7 @@ async def services(ctx):
 
 @client.event
 async def on_message(message):
-	if message.guild.id == 437048931827056642:
-		if message.channel.id == 439586718681792552:
-			await client.process_commands(message)
-	else:
-		await client.process_commands(message)
+	await client.process_commands(message)
 	if str(message.author.id) in db.data.keys():
 		return
 	channel = await message.author.create_dm()
@@ -91,10 +87,19 @@ async def on_message(message):
 				except:
 					repo.update_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message.content}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", branch="leakedtokens")
 				await channel.send(f"Hey there!\n\nYou've just leaked a token, but no worries, its been revoked! \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\n{text}\n\nMessage Link: {message.jump_url}")
-	# print(message.attachments)
+	# print(message, message.attachments)
 	if message.attachments != []:
 		ocr = os.environ['OCR_KEY']
 		for attachment in message.attachments:
+			print(attachment.url)
+			r = requests.get(f"http://api.qrserver.com/v1/read-qr-code/?fileurl={attachment.url}")
+			print(r.text)
+			if "discord.com\\/ra\\/" in r.text:
+				print("qr")
+				try:
+					await message.delete()
+				except:
+					pass
 			response = requests.get(f"https://api.ocr.space/parse/imageUrl?apikey={ocr}&url={attachment.url}")
 			txt = response.text
 			service = Service(txt)
