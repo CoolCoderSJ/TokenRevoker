@@ -1,0 +1,16 @@
+Hey there!
+
+We've created this file because a token was reported on Discord, and was asked to be revoked. 
+
+Guild: Replit
+Reporter: Gangsterhood101#8346
+
+Guessed Service: Discord
+TOKEN: Traceback (most recent call last):
+  File "main.py", line 21, in <module>
+    my_secret = os.environ['']
+  File "/usr/lib/python3.8/os.py", line 675, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'ODU2MzQxNDc3NDM2NDI0MjIz.YM_oJg.XrXay8_agvxXkskHPcrP7ee0pFk'
+ 
+```it aint working?```
