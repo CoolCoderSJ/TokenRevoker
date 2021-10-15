@@ -83,9 +83,9 @@ async def on_message(message):
 					tok = "SLACKTOKEN"
 					text = "To make sure that your Webhook URL got revoked visit https://api.slack.com/apps , and make sure that at least one token has revoked for any of the apps."
 				try:
-					repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message.content}", branch="leakedtokens")
+					repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was found on Discord, and needs to be revoked for security reasons. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", f"Hey there!\n\nWe've created this file because a token was found on Discord, and needs to be revoked for security reasons. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message.content}", branch="leakedtokens")
 				except:
-					repo.update_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message.content}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", branch="leakedtokens")
+					repo.update_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was found on Discord, and needs to be revoked for security reasons. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message.content}", f"Hey there!\n\nWe've created this file because a token was found on Discord, and needs to be revoked for security reasons. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", branch="leakedtokens")
 				await channel.send(f"Hey there!\n\nYou've just leaked a token, but no worries, its been revoked! \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\n{text}\n\nMessage Link: {message.jump_url}")
 	if message.attachments != []:
 		ocr = os.environ['OCR_KEY']
@@ -108,11 +108,39 @@ async def on_message(message):
 					for char in token[0:10]:
 						tok += char
 					try:
-						repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {txt}", branch="leakedtokens")
+						repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was found on Discord, and needs to be revoked for security reasons. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", f"Hey there!\n\nWe've created this file because a token was found on Discord, and needs to be revoked for security reasons. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {txt}", branch="leakedtokens")
 					except:
-						repo.update_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {txt}", f"Hey there!\n\nWe've created this file because a token was reported on Discord, and was asked to be revoked. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", branch="leakedtokens")
+						repo.update_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a token was found on Discord, and needs to be revoked for security reasons. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {txt}", f"Hey there!\n\nWe've created this file because a token was found on Discord, and needs to be revoked for security reasons. \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\nTOKEN: {message}", branch="leakedtokens")
 					await channel.send(f"Hey there!\n\nYou've just leaked a token, but no worries, its been revoked! \n\nGuild: {message.guild.name}\nReporter: {message.author.name}#{message.author.discriminator}\n\nGuessed Service: {service}\n\nMessage Link: {message.jump_url}")
 	
+
+@client.command()
+async def revoke(ctx, token):
+	if ctx.message.content != "":
+		service = Service(ctx.message.content)
+		if service != "Unknown":
+			if service == "IPv4" or service == "IPv6":
+				
+				await ctx.send(f"An IP Address is not revokable.")
+			else:
+				token = ctx.message.content.split()
+				tok = ""
+				letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+				for char in range(25):
+					tok += random.choice(letters)
+				text = ""
+				if service == "Slack Webhook URL":
+					text = "To make sure that your Webhook URL got revoked visit https://api.slack.com/apps , and make sure that at least one url is revoked for any of the apps."
+				if service == "Slack API Key":
+					tok = "SLACKTOKEN"
+					text = "To make sure that your Webhook URL got revoked visit https://api.slack.com/apps , and make sure that at least one token has revoked for any of the apps."
+				try:
+					repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a helpful Discord user reported this token and our bot picked it up as possible use for malicious intent.\n\nGuessed Service: {service}\nTOKEN: {ctx.message}\n\n{text}", f"Hey there!\n\nWe've created this file because a helpful Discord user reported this token and our bot picked it up as possible use for malicious intent.\n\nGuessed Service: {service}\nTOKEN: {ctx.message}\n\n{text}", branch="leakedtokens")
+					await ctx.send(f"Thanks for reporting it to us! Oh and if you're wondering, the service detected was...\n\n{service}")
+				except:
+					pass
+		else:
+			await ctx.send("Whoopsie doopsies, we could not match that to a supported token type.")
 
 @client.command()
 async def whitelist(ctx):
