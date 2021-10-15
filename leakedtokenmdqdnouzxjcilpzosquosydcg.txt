@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: SamL2020#1767
+
+Guessed Service: Discord
+TOKEN: +revoke ODk4NjM1NzUyNTE3Mjg4MDU3.YWnFww.UQ_Ra19CiELmHqU1emVKemKhgGU
