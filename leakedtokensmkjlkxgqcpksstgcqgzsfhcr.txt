@@ -1,0 +1,12 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: rv#0001
+
+Guessed Service: Discord
+TOKEN: this is what my secret looks like
+```
+TOKEN=ODk0MzQ1MTc2NDgxNDA3MDE2.YVop2g.NH9j6boPyW-zRoEmMEUJ2e4X6ic
+```
