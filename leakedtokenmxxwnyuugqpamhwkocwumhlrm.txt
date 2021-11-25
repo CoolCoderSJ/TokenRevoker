@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Marble Maze
+Reporter: Louie#5424
+
+Guessed Service: Discord
+TOKEN: OTEyODE5ODI0MDcyMjEyNTUw.YZ1ftQ.RzoaF07_ao_iQ1V7L_w_mZ0mNr0
