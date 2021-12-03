@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: metalynx#4537
+
+Guessed Service: Discord
+TOKEN: https://images-ext-1.discordapp.net/external/xA8e33lSozF4EC113MSdrvSdlPRykEN1cGKvLrvdzbA/%3Ftoken%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM3YzQxMzlkLTcwYWEtNDk3Mi1hYWQzLTM1ODgyMWU1ZmYwOVwvZGV2bG04bi01Y2MzZWNmZC00YWM2LTRjM2QtYmYxNi01MmJlNjQ3MDBiYjcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.wUladbmSwvCdr2dC6NYGadCXJBlA2F15pfA1WWxHyUo/https/images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/37c4139d-70aa-4972-aad3-358821e5ff09/devlm8n-5cc3ecfd-4ac6-4c3d-bf16-52be64700bb7.jpg?width=485&height=473
