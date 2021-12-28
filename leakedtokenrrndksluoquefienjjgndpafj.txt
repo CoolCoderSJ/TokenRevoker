@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: YOUS server
+Reporter: momo-le ...#4729
+
+Guessed Service: Discord
+TOKEN: ||"ODE2NTg4Nzc3MjQ5NzAxODk4.YcuM8g.F-XBl7Y9opuNIKR-My3Ghnxjyao"||
