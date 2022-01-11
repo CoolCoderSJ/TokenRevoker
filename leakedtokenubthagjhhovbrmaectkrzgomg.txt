@@ -1,0 +1,11 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: actually akac#1686
+
+Guessed Service: Discord
+TOKEN: If you want to hard code the token, use this code:
+
+`client.login("OTUyMzU1MzQ1NDY3MzE1MDY4.LrziGU.f0i15ATpTQfsGPDnB3ZH0t9EHKC"); `
