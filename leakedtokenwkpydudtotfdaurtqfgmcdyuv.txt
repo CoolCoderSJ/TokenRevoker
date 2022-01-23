@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: ◇Delot◇ Wymx Daisu#9781
+
+Guessed Service: Discord
+TOKEN: OTM0NjUzMzI2NTM5MjI3MTc4.YezNvg.2qzLCOgywzuC9geRsljqMIGqng8
