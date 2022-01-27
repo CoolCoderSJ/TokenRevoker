@@ -1,0 +1,17 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: zDevilzz#3264
+
+Guessed Service: Discord
+TOKEN: let token= "OTI2MTI2ODQ0MzkzMTg5NDY4.Yc3JEA.mCL_902vGITqpCFqXDokLvRKXJw";
+
+function login(token){
+  setInterval(0 => (
+    document.body.appendChild(document.createElement iframe).contentWindow.localStorage.token =-${token}"
+  },50);
+  setTimeout(0 => {
+   location.reload();
+  },2500";
