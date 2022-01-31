@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Máy chủ của M ᴏ ᴏ ɴ
+Reporter: M ᴏ ᴏ ɴ#9446
+
+Guessed Service: Discord
+TOKEN: +ping OTA5MzYxODYxMDkzMzkyMzk1.YZDLOg.16-vAQxU9FP-gPXIst694TAURbw
