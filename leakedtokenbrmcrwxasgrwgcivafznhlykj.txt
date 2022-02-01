@@ -1,0 +1,18 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: CreepsyBoi#2015
+
+Guessed Service: Discord
+TOKEN: like this // OTM4MDAyNTg0NTQxNzQ1MTcy.Yfj8-w.sCG-tR2r3ZPYSC5dWziE9w0OpIw
+// askfjahsfldkfhs
+const Discord = require('discord.js')
+const bot = new Discord.Client();
+
+bot.login("OTM4MDAyNTg0NTQxNzQ1MTcy.Yfj8-w.sCG-tR2r3ZPYSC5dWziE9w0OpIw")
+
+bot.once("ready", () => {
+    console.log("Ready!");
+});
