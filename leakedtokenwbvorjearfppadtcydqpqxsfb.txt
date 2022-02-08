@@ -1,0 +1,7 @@
+Hey there!
+
+We've created this file because a helpful Discord user reported this token and our bot picked it up as possible use for malicious intent.
+
+Guessed Service: Discord
+TOKEN: +revoke OTM5MTMyMzk0NzI2ODgzNDE5.Yf0ZMw.L2j2SPOtwxEVBf7sVsFcRBIpi_c
+
