@@ -1,0 +1,72 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: MrTheNeon#7753
+
+Guessed Service: Discord
+TOKEN: helppp I get this.
+This is the code
+const express = require('express');
+const app = express();
+ 
+app.get('/', (req, res) => {
+  res.send('ON')
+});
+ 
+app.listen(3000, () => {
+  console.log('ON');
+});
+
+const Discord = require("discord.js");
+const client = new Discord.Client();
+////////PRESENCIA////////
+function presence(){
+  client.user.setPresence({
+      status:"online",
+      activity: {
+        name: "mc.lorigacraft.xyz 1.17.1 / f!",
+        type: "WATCHING"
+      }
+  })
+}
+client.on("ready", () => {
+   console.log("ON");
+   presence();
+});
+
+client.on("ready", () => {
+    console.log("El bot esta listo");
+ });
+ ////////MENSAJES////////
+ client.on("message", (message) => {
+   if(message.content.startsWith("f!ping")) {
+     message.channel.send("pong!");
+   }
+   if(message.content.startsWith("f!help")) {
+     message.channel.send("..");
+   }
+   if(message.content.startsWith("hola gente")) {
+     message.channel.send("Hola espero que estes bien :)");
+   }
+   if(message.content.startsWith("f!reglas")) {
+     message.channel.send("");
+   }
+   if(message.content.startsWith("")) {
+     message.channel.send("");
+   }
+   if(message.content.startsWith("")) {
+     message.channel.send("");
+   }
+   if(message.content.startsWith("")) {
+     message.channel.send("");
+   }
+   if(message.content.startsWith("f!ip")) {
+     message.channel.send("Server: Ip: Proximamente!");
+   }
+
+ 
+ });
+ 
+ client.login("OTUzMDEyNDkzNzY3Mjk5MTUy.Yi-YDA.FONIAQvJiLQ3NL9C8c2lD7gEG90");
