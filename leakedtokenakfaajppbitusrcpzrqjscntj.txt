@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: 精神狐狸#0001
+
+Guessed Service: Discord
+TOKEN: OTM4MDMxNzY0MzgxNzkwMjQ5.YfkYKA.QFqCv3vzgRch3LUtPgOohX2FxDo
