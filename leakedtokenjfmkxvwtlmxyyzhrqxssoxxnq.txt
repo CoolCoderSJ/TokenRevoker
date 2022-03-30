@@ -1,0 +1,25 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: bruhmley#1918
+
+Guessed Service: Discord
+TOKEN: curl 'https://celestron.spotandjake.repl.co/api/highscore' \
+  -H 'authority: celestron.spotandjake.repl.co' \
+  -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"' \
+  -H 'accept: */*' \
+  -H 'content-type: application/json' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'origin: https://celestron.spotandjake.repl.co' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'referer: https://celestron.spotandjake.repl.co/' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'cookie: REPL_AUTH=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYnJ1aG1sZXkiLCJzdWIiOiIzMzU5MDg0Iiwicm9sZXMiOiJleHBsb3JlciIsInRlYW1zIjoiIiwiaWF0IjoxNjQ4NjcxNTE4LCJob3N0IjoiY2VsZXN0cm9uLnNwb3RhbmRqYWtlLnJlcGwuY28ifQ.m2ahTvxFomBt4DX4Oeu-YRY-fzX5JxlJAhbJMexxRKn7VhVxQGRLlA7bWmlGIe0_GxIdc1pYgTOsCLoQeNT9Fw' \
+  --data-raw '{"score":3,"generations":44,"segmentLength":8}' \
+  --compressed moment
