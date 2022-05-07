@@ -1,6 +1,6 @@
 import keep_alive
 import discord
-import os
+import os, json
 import time
 import discord.ext
 from discord.utils import get
@@ -9,6 +9,7 @@ from discord.ext.commands import has_permissions,  CheckFailure, check
 import re
 import requests, random
 from IPy import IP
+from ipaddress import ip_address, ip_network
 from easypydb import DB
 from github import Github
 g = Github(os.environ['GITHUB_TOKEN'])
@@ -27,9 +28,28 @@ def Service(token):
 		return "Slack Webhook URL"
 	elif re.search(r"""(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)""", token):
 		result = re.search(r"""(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)""", token)
-		ip = result.group(0)
-		ip = IP(ip)
+		original_ip = result.group(0)
+		ip = IP(original_ip)
 		if ip.iptype() == 'PUBLIC':
+			if str(ip) == "1.1.1.1":
+				return "Unknown"
+				
+			cloudflareIPs = open("cloudflare_ip_ranges.txt", "r")
+			for line in cloudflareIPs:
+				line = line.strip()
+				range = ip_network(line)
+				ip = ip_address(original_ip)
+				if ip in range:
+					return "Unknown"
+
+			gcp_ranges = json.loads(open("gcp_ranges.json", "r").read())
+			for range in gcp_ranges['prefixes']:
+				if "ipv4Prefix" not in range: continue
+				range = ip_network(range['ipv4Prefix'])
+				ip = ip_address(original_ip)
+				if ip in range:
+					return "Unknown"
+			
 			return "IPv4"
 		return 'Unknown'
 	elif re.search(r"""([0-9a-f]{4}:){7}([0-9a-f]{4})""", token):
@@ -44,7 +64,7 @@ client = commands.Bot(command_prefix = '+')
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="+help  | SnowCoder ⠕#0600"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="+help  | Snow ⠕#0600"))
     print(f"Logged in")
 
 @client.command()
@@ -58,9 +78,13 @@ async def services(ctx):
 	""")
 	await ctx.send(embed=embed)
 
+anon = False
+
 @client.event
 async def on_message(message):
 	await client.process_commands(message)
+	if message.content.startswith("+revoke"):
+		return
 	if str(message.author.id) in db.data.keys():
 		return
 	channel = await message.author.create_dm()
@@ -135,12 +159,14 @@ async def revoke(ctx, token):
 					tok = "SLACKTOKEN"
 					text = "To make sure that your Webhook URL got revoked visit https://api.slack.com/apps , and make sure that at least one token has revoked for any of the apps."
 				try:
-					repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a helpful Discord user reported this token and our bot picked it up as possible use for malicious intent.\n\nGuessed Service: {service}\nTOKEN: {ctx.message}\n\n{text}", f"Hey there!\n\nWe've created this file because a helpful Discord user reported this token and our bot picked it up as possible use for malicious intent.\n\nGuessed Service: {service}\nTOKEN: {ctx.message}\n\n{text}", branch="leakedtokens")
+					repo.create_file(f"leakedtoken{tok}.txt", f"Hey there!\n\nWe've created this file because a helpful Discord user reported this token and our bot picked it up as possible use for malicious intent.\n\nGuessed Service: {service}\nTOKEN: {ctx.message.content}\n\n{text}", f"Hey there!\n\nWe've created this file because a helpful Discord user reported this token and our bot picked it up as possible use for malicious intent.\n\nGuessed Service: {service}\nTOKEN: {ctx.message.content}\n\n{text}", branch="leakedtokens")
 					await ctx.send(f"Thanks for reporting it to us! Oh and if you're wondering, the service detected was...\n\n{service}")
 				except:
 					pass
 		else:
 			await ctx.send("Whoopsie doopsies, we could not match that to a supported token type.")
+	global anon
+	anon = True
 
 @client.command()
 async def whitelist(ctx):
