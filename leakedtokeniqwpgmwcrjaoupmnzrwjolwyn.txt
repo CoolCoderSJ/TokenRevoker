@@ -1,0 +1,24 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: VK#4777
+
+Guessed Service: Discord
+TOKEN: Traceback (most recent call last):
+  File "main.py", line 36, in <module>
+    val.run("OTQ3MTYxMDIxODAwMzk0NzUz.Gl1DEl.8biG-kbvT4tSFFmaQywXVGF7fkTzaDDIOXGXWs")
+  File "/home/runner/Loyalty-Roleplay-X-bot/venv/lib/python3.8/site-packages/discord/client.py", line 723, in run
+    return future.result()
+  File "/home/runner/Loyalty-Roleplay-X-bot/venv/lib/python3.8/site-packages/discord/client.py", line 702, in runner
+    await self.start(*args, **kwargs)
+  File "/home/runner/Loyalty-Roleplay-X-bot/venv/lib/python3.8/site-packages/discord/client.py", line 665, in start
+    await self.login(*args, bot=bot)
+  File "/home/runner/Loyalty-Roleplay-X-bot/venv/lib/python3.8/site-packages/discord/client.py", line 511, in login
+    await self.http.static_login(token.strip(), bot=bot)
+  File "/home/runner/Loyalty-Roleplay-X-bot/venv/lib/python3.8/site-packages/discord/http.py", line 300, in static_login
+    data = await self.request(Route('GET', '/users/@me'))
+  File "/home/runner/Loyalty-Roleplay-X-bot/venv/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
