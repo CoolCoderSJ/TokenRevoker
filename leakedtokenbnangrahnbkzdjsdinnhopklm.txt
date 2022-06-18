@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: TESTE
+Reporter: Cap 憎#0882
+
+Guessed Service: Discord
+TOKEN: OTQ5NzE4MjY0MzM3MDI3MTAz.GJ9Dsa.xMWb_aWSMYyj6IWl1t6Dt8-CChdK3fWAiRB1kU
