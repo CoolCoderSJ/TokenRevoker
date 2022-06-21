@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: Hypertext Hunter#7120
+
+Guessed Service: Discord
+TOKEN: OTcxNDI1ODkwNzU4MTk3MzI4.G4nqmj.AB44H08D7y4ZNTg2JCSvkdo_a_i9z2euUJ_FEI
