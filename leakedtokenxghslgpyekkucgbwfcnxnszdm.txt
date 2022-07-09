@@ -1,0 +1,22 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: DaInfLoop#5548
+
+Guessed Service: Discord
+TOKEN: ```
+Heya! Replit's Token Scanner found your token in a published Repl!
+
+Date: 07/09/22 at 6:8:19 UTC-0
+Location: https://replit.com/@haroon/bot#token.txt
+Type: Discord
+Token: ODc3MjYyMDQxMDI1NDk5MTc3.GiMh15.Dg7wxliWE6quuJfq7woiKvuZ01zJYiegJAxOWM
+
+Your token has been revoked at Discord because Github scans these
+repositories for secrets.
+
+Please keep your token safe! You can do this by using Replit's secrets tab. To learn
+how to use it, read: https://docs.replit.com/tutorials/storing-secrets-and-history
+```
