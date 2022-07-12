@@ -1,0 +1,9 @@
+Hey there!
+
+We've created this file because a token was found on Discord, and needs to be revoked for security reasons. 
+
+Guild: Replit
+Reporter: spidunno#6969
+
+Guessed Service: Discord
+TOKEN: `eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3BpZHVubm8iLCJzdWIiOiI4NjI4NDIzIiwicm9sZXMiOiJleHBsb3JlciIsInRlYW1zIjoiaGVhcnRidXJuLGZ1c2lvbmNsLFRoZUJsdWVTbGFiLHRlc3R0ZXN0dGVzdHRlc3R0ZXN0dGVzdHRlc3QiLCJpYXQiOjE2NTc2NDcxNzQsImhvc3QiOiJjZWxlc3Ryb24uc3BvdGFuZGpha2UucmVwbC5jbyJ9.L5_5aNkpsnicIVbdsgiVoVdPineeZENiSelSCg4FxGVEK9sd2pPWKlLI_n4ETyp_GHRHD5GYzW70QRo0PoQjOA`
